@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: odds-shopgw
+  namespace: odds-shop
+spec:
+  selector:
+      app: odds-shopgw
+  ports:
+    - name: odds-gw-http
+      port: 80
+      targetPort: 80
+      protocol: TCP
+    #warning ---> strict-origin-when-cross-origin
+    # - name: odds-gw-https
+    #   port: 443
+    #   targetPort: 443
+    #   protocol: TCP
